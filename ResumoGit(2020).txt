@@ -1,0 +1,80 @@
+RESUMO DE GIT:
+
+-História:
+ Brevemente, o git, criado por Linus Torvalds para o desenvolvimento do kernel Linux, surgiu após um "rompimento" entre os desenvolvedores do próprio linux e um sistema que anteriormente guardava seu código. Sendo assim, ele decidiu criar seu próprio sistema melhor e mais eficiente.
+
+-O que é o git?
+ é um sistema de controle de versões de arquivos (sistema responsável por pegar as diferentes modificções ocorridas no projeto e criar versões desses documentos, possibilitando "ir e voltar" nessas versões). Além disso, ele também possibilita a colaboração quase que simultanea entre os desenvolvedores, que podem editar e criar novos arquivos sem riscos de sobreposição.
+
+-Diferença entre o git e o github:
+ O git tem como sua principal funcionalidade a criação de projetos e gerenciamento das alterações feitas, guardando em um histórico. Já o github, é uma especie de rede social, na qual você pode tanto armazenar seus projetos como acessar projetos de outros usuários (disponibilizados ara o público).
+
+-Instalando o git:
+ Para instalar o git, acessar o link: https://git-scm.com/download/win
+
+-Configurando o git:
+ Para abrir um terminal git no windows, basta criar uma pasta qualquer, clicar com o botão direito e escolher a opção "Git bash here". Após isso digitar:
+   $git config --global user.name "nome do usuário no github"
+   $git config --global user.email "email do usuário no github"
+
+-Clonagem:
+ Quando queremos trazer um projeto do github para nosso computador, é possível realizar a chama "clonagem". Para isso, basta digitar:
+   $git clone "url do repositório no git"
+
+-Comandos iniciais:
+ Primeiramente, entre no diretório que deseja controlar a versão e digite:
+   $git inic
+ Isso fará com que os seus arquivos fiquem em "modo de espera" para serem adicionados no estágio de controle (cuidado, não significa que já estejam sendo supervisionados). 
+
+ O comando "add", adiciona o(s) arquivo(s) em um lugar que chamaremos de INDEX (área do git no qual os arquivos possam ser enviados ao github (ele não adiciona um arquivo novo, mas sim diz que ele está sendo preparado para entrar na próxima versão do repositório). Para adicionar no estágio de controle, digite:
+   $git add "nome do arquivo (incluindo a extensão)"
+Obs.: para adicionar todos os arquivos do diretório, basta acrescentar um "." ("$ git add .").
+
+ Outra coisa importante é saber o status do projeto. No git, você consegue ver quais arquivos estão fora do controle, quais foram modificados, quais estão esperando por uma descrição de modificação, etc. Para isso, digitar:
+   $git status
+Obs.: Para voltar ao estágio anterios do adicionamento basta digitar "$git reset HEAD "nome do arquivo" ".
+
+ No git, existe um comando chamado de "commit", que basicamente pega todos arquivos que estão naquele lugar que chamamos anteriormente de "INDEX" (Para usar o commit sempre é necessário usar um add antes). Sendo assim, digite:
+   $git commit -m "comentário qualquer"
+Obs.: Para adicionar e commitar ao mesmo tempo, adicione um "-a" antes do "-m" ("$git commit -a -m "comentário qualquer"").
+
+ Para verificar o histórico de commits, digite:
+   $git log
+   
+
+ Existe um comando que é usado para publicar todos os seus commits no github (neste momento será pedido a sua senha), e o nome dele é "push". Para isso, basta digitar:
+   $git push (normalmente, no github, é necessário digitar "oringin "nome do branch"" no final)
+
+ Além de tudo isso, o git possui ponteiros móveis que levam á um commit. É muito útil em situações nas quais você deseja adicionar um novo recurso ou corrigir um erro, gerando uma nova ramificação garantindo que o código instável não seja mesclado nos arquivos do projeto principal. Depois de concluir a atualização dos códigos da ramificação, você pode mesclar a ramificação com a principal, geralmente chamada de master. Para usá-lo, basta digitar:
+
+$git branch ---> Para visualizar os já existentes
+$git branch "Nome qualquer" ---> Para criar um Branch
+$git checkout "Nome qualquer" ---> Para acessá-lo
+$git merge "Nome do branch" ---> cria um novo commit ao juntar dois branchs
+$git rebase "Nome do branch" ---> reaplica commits em cima de outro branchs
+
+ Existe um comando capaz de indicar quais arquivos ou tipos de arquivos (.txt, .pdf, etc) não devem ser rastreados para o versionamento.  Depois de adicionar nomes de arquivos ao arquivo .gitignore, as alterações feitas nos arquivos que correspondem a esses nomes não serão rastreadas. Para utilizar o ".gitignore", crie um arquivo chamado ".gitignore" (se ele não existir), adicione o arquivo que não é desejado, salve e feche.
+
+ Para trazer e puxar as alterações feitas por outros usuários, basta digitar:
+   $git pull origin master
+ E para sincronizar tudo que está no repositório remoto:
+   $git pull
+
+ Por fim, existem o comando "tag", que serve para marcar etapas durante as modificações, ficando mais facil de fazer qualquer rollback do projeto para umas tag específica em vez de voltar ao commit. Para isso:
+   $git tag "versãó da tag" ---> cria a tag
+   $git tag -l ---> lista a tag
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
