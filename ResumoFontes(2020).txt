@@ -1,0 +1,66 @@
+RESUMO DE ELETRÔNICA ANALÓGICA E DIGITAL E TOPOLOGIA DE FONTES
+
+
+Eletrônica analógica e digital:
+
+ Existem equipamentos que são classificados como analógicos e outros como digital. Os computadores, por exemplo, são considerados digitais, entretanto, mesmo assim existem muitos circuitos internos que possuem configurações analógicas.
+
+ Uma definição genérica para eletrônica analógica encontrada nos livros especializados, é que estes são os circuitos que operam com quantidades que só podem ser incrementadas ou decrementadas em passos finitos. Geralmente, está associada à  lógica binária, na qual trabalha com valores "1" e "0" (habilita e desabilita e geralmente com sinais "quadrados").
+
+ Já a eletrônica analógica,  trabalha com quantidades ou sinais de modo contínuo numa escala, ou seja, os valores dos sinais não precisam ser inteiros (normalmente, os sinais analógicos são semelhantes a uma função senoidal).
+
+Alguns componentes da eletrônica analógica são: resistores, capacitores, indutores, diodos e transistores. São utilizados em amplificadores antigos, rádios, fontes de alimentação, entre outros.
+
+Alguns componentes da eletrônica digital são: portas lógicas ("AND", "OR", "NOT"). São utilizados em computadores, calculadoras, entre outros.
+
+Conversor D/A - dizemos que o conversor digital-analógico converte um sinal digital em um sinal analógico sob a forma de uma tensão ou corrente de saída e são formados por elementos passivos, fontes de referência, chaves e AMPOPs. Em geral, a conversão é paralela e o tempo varia de acordo com os componentes utilizados.
+
+Conversor A/D- dizemos que o conversor analógico-digital são dispositivos capazes de reproduzir uma representação digital a partir de um processo analógico normalmente um sinal por um nível  de tensão  ou intensidade da corrente elétrica.
+
+*********************************************************************************************************
+
+ fontes chaveadas:
+
+O desenvolvimento de fontes chaveadas teve início na década de 1960, para atender a demanda de equipamentos militares mais compactos e eficientes. Atualmente são usadas em televisores, computadores e muitos outros aparelhos eletrônicos.
+
+Observa-se a cada dia o uso mais frequente de fontes chaveadas nos mais diversos sistemas eletrônicos. As razões para ta crescimento são,  basicamente,  os requisitos de volume, peso e eficiência dos equipamentos.
+
+As fontes chaveadas podem tanto abaixar a tensão o que nos leva a conversores do tipo "book" como podem aumentar a tensão de entrada, o que nos leva aos conversores do tipo "boost". Também  temos os conversores que podem produzir tensões negativas ou ainda tanto abaixar quanto aumentar.
+
+Temos então uma hierarquia de topologias que, partindo das fontes lineares, nos levam às diversas fontes chaveadas que encontramos nos equipamentos.
+
+TOPOLOGIAS:
+
+REGULADOR LINEAR -  A configuração básica tem um transistor que funciona
+como um resistor variável determinando assim quanto de corrente deve passar para a carga. O resistor e a carga formam então um divisor variável que estabelece sobre a carga uma tensão constante. 
+
+As vantagens desse tipo de configuração estão no seu baixo custo, corrente quiescente baixa e no fato de que ela não produz ruídos nem EMI. Já as desvantagens estão no fato de que ela só pode abaixar a tensão (sua saída é sempre menor do que a entrada) e que ela desperdiça energia que é dissipada na forma de calor no elemento regulador (transistor). Isso significa que sua eficiência é baixa.
+
+a)BOMBA DE CARGA (CHARGE PUMP) - Trata-se de uma configuração em que cargas são bombeadas para capacitores de modo a carregá-lo.
+Depois, os capacitores são descarregados através do circuito a ser alimentado de forma controlada, determinando a tensão que ele deve receber. A velocidade de chaveamento é determinada por um oscilador externo podendo chegar a alguns megahertz. 
+As vantagens desse tipo de fonte estão no seu baixo custo, no seu tamanho reduzido e no fato dela tanto poder aumentar como diminuir a tensão. Por exemplo, os capacitores podem ser carregados em paralelo e depois descarregados em série, obtendo-se assim na saída o dobro da tensão de entrada. A tensão de saída também pode ser invertida, com o uso de um circuito de chaveamento apropriado.
+ A desvantagem está na sua potência de saída limitada e na faixa de tensões tanto de entrada como de saída.Outro problema que essa topologia pode apresentar é a geração de ruídos pela comutação rápida do circuito.
+
+b)CONVERSOR BUCK (ABAIXADOR) - Trata-se de uma configuração de fonte chaveada que abaixa a tensão obtendo-se a regulagem da tensão na carga através de circuitos PWM. 
+ Nessa configuração o capacitor carrega-se através de um indutor e depois descarrega-se através da carga. A energia armazenada no campo magnético do indutor fornece energia à carga, a qual é filtrada pelo capacitor.
+
+c)CONVERSOR BOOST (ELEVADOR) - O que essa configuração faz é elevar a tensão. Para isso, um sistema chaveia a corrente num indutor de modo que energia é armazenada em seu campo magnético. 
+ Como as linhas de força do campo desse indutor se contraem mais rapidamente do que na expansão que cria o campo, a tensão induzida no processo é maior do que a usada na entrada. Com isso a tensão de saída é maior do que a de entrada. As vantagens desta configuração estão na sua baixa corrente de pico e no chaveamento na entrada. Já as desvantagens estão no fato de que tem bom rendimento apenas na elevação da tensão e não existe proteção contra curto-circuitos.
+
+d)VERSOR (INVERTER) - Nessa configuração temos um indutor que carrega-se (energia no campo) com a tensão circulando no sentido e quando ele descarrega ele faz circular pela carga uma corrente no sentido inverso. 
+ A principal vantagem está na simplicidade da configuração que usa apenas um indutor. Já as desvantagens estão no fato de se obter uma tensão negativa apenas e de que a corrente de pico é elevada.
+
+e)FLYBACK - Nesse caso, utiliza-se um transformador em lugar do indutor para fazer a transferência da energia através do campo magnético. O transformador usado pode ter núcleo de ferrite, e ser de pequenas dimensões, graças ao uso de freqüências elevadas de comutação.
+ As principais vantagens estão no isolamento dado pela presença do transformador, a possibilidade do enrolamento secundário ter derivações, e além a possibilidade tanto de se aumentar como diminuir a tensão. Já desvantagem está no uso do transformador, nas correntes elevadas de pico e alta tensão que aparece na comutação.
+
+f)PUSH-PULL - Trata-se de uma configuração que pode ser considerada como a versão fly-back com comutação em oposição de fase de modo a se obter maior rendimento. Nesse caso, o enrolamento primário do transformador é dotado de tomada central. 
+ As vantagens estão no isolamento dado pelo transformador, na possibilidade de se ter diversas saídas, tanto com a elevação como abaixamento da tensão e, além disso, a filtragem é facilitada pelo sinal que aparece nos dois ciclos de comutação. Já as desvantagem está no transformador e na necessidade de dois circuitos de comutação.
+
+g)OUTRAS TOPOLOGIAS - Existem ainda outras topologias mais complexas que podem ser encontradas em algumas aplicações, principais as mais sofisticadas já que seus circuitos usam mais componentes e elas normalmente consomem mais energia.
+ Essas topologias são encontradas com mais freqüência em equipamentos que não sejam alimentados por baterias. Dentre elas destacamos a topologia denominada ressonante, combinadas (boost x buck), além de outras.
+
+Fontes Lineares: 
+
+As fontes lineares são mais robustas, simples e fáceis de projetar, podem ser mais baratas ou não e são muito volumosas e pesadas. Ela é alimentada pela tensão da rede elétrica, em 110Vca ou 220Vca, diretamente no primário de um transformador. Neste transformador é necessário que exista um enrolamento para a entrada em 110Vca, outro enrolamento para a entrada 220Vca. A escola, então, será feita na chave seletora.
+ Pode-se constatar que a fonte linear é muito simples de se projetar e fabricar. A maior preocupação é definir corretamente a relação de transformação entre o primário e o secundário, prevendo-se que na menor tensão de entrada, em 110Vca ou 220Vca, a tensão do secundário seja suficiente para que o regulador linear tenha margem para que consiga controlar a tensão para o valor desejado.
+ No entanto, a facilidade de projeto e a robustez da fonte linear não compensam a grande dimensão e peso, como também o seu baixo rendimento, pois são características já não mais aceitáveis nos equipamentos atuais.
